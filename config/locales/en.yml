@@ -18,5 +18,14 @@ en:
     home: "Home"
     help: "Help"
     login: "Log in"
+    logout: "Log out"
+    account: "Account"
+    profile: "Profile"
+    settings: "Settings"
   signup:
     signup_now: "Sign up now!"
+    sign_up: "Sign up"
+    create_account: "Create account"
+  login:
+    remember: "Remember me"
+    new_user: "New user? "
