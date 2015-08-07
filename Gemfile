@@ -20,6 +20,7 @@ gem "sdoc",         "0.4.0", group: :doc
 gem "figaro"
 gem "rails_config"
 gem "friendly_id"
+gem "cancancan"
 
 group :development, :test do
   gem "sqlite3",     "1.3.9"
