@@ -1,0 +1,13 @@
+<tr id="user-<%= user.id %>">
+  <td><%= link_to user.name, user %></td>
+  <td><%= user.email %></td>
+  <td>
+    <%= form_for [:admin, user], remote: true do |f| %>
+      <%= f.hidden_field :admin, value: !user.admin %>
+      <%= f.submit user.admin? ? t("admin.set_normal_user") : t("admin.set_admin_user"), 
+        class: "btn btn-primary btn-sm" %>
+    <% end %>
+  </td>
+  <td><%= link_to t"delete", admin_user_path(user), remote: true, method: :delete,
+    data: {confirm: t("confirm_action")} %></td>
+</tr>
