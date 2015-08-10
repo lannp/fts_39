@@ -29,3 +29,14 @@ en:
   login:
     remember: "Remember me"
     new_user: "New user? "
+  edit_user:
+    profile_update: "Profile updated"
+    save: "Save Changes"
+    change: "Change"
+    update: "Update your profile"
+    edit: "Edit user"
+    confir: "Confirm password"
+    update_failed: "Update failed"
+  message:
+    error: "error"
+    error_message: "The form contains"
