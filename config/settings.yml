@@ -1,0 +1,11 @@
+avatar: 
+  image_type_accept: image/jpeg,image/gif,image/png
+  image_size_edit: "50x50"
+  image_size: "200x200"
+  image_storage: 5
+  store_dir: "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  extension_white_list:
+    - jpg
+    - jpeg
+    - gif
+    - png

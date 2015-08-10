@@ -21,6 +21,7 @@ gem "figaro"
 gem "rails_config"
 gem "friendly_id"
 gem "cancancan"
+gem "config"
 
 group :development, :test do
   gem "sqlite3",     "1.3.9"
