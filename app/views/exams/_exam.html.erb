@@ -1,0 +1,12 @@
+<div class="row">
+  <hr>
+  <div class="col-sm-6">
+    <b><%= exam.created_at.strftime(t "datetime") %></b>
+  </div>
+</div>
+<div class="row answer-sheet">
+  <hr>
+  <div class="col-sm-6">
+    <%= exam.category.name %>
+  </div>
+</div>
