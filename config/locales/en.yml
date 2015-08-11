@@ -1,4 +1,5 @@
 en:
+  datetime: "%Y/%m/%d %H:%M:%S"
   static_pages:
     rubyonrails: "Ruby on Rails Tutorial"
     michaelHartl: " by Michael Hartl"
@@ -40,3 +41,10 @@ en:
   message:
     error: "error"
     error_message: "The form contains"
+  exams:
+    all_exams: "All Examination"
+    start_new: "Start new"
+    success_create: "successfully "
+    danger_create: "Create failed"
+    start: "Start"
+    view: "View"
