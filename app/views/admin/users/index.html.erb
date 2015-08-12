@@ -1,0 +1,18 @@
+<% provide :title, t("admin.list_user") %>
+<h1><%= t "admin.list_user" %></h1>
+<div id="section_admin_user">
+  <table id="users_record" class="table table-bordered">
+    <tbody>
+      <tr>
+        <th><%= t "admin.name" %></th>
+        <th><%= t "admin.email" %></th>
+        <th><%= t "admin.change_user_role" %></th>  
+        <th><%= t "delete" %></th>
+      </tr>
+      <tr>
+        <%= render @users %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<%= will_paginate %>
