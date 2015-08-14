@@ -48,6 +48,8 @@ en:
     danger_create: "Create failed"
     start: "Start"
     view: "View"
+    done: "Done"
+    time_over: "Time over!"
   admin:
     list_user: "Users List"
     name: "Name"

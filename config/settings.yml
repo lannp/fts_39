@@ -10,3 +10,8 @@ avatar:
     - gif
     - png
 per_page: 10
+questions_per_exam: 5
+exams:
+  start: "Start"
+  view: "View"
+  minutes: 3

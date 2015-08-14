@@ -14,14 +14,16 @@
 ActiveRecord::Schema.define(version: 20150811011439) do
 
   create_table "answer_sheets", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "exam_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
+  add_index "answer_sheets", ["answer_id"], name: "index_answer_sheets_on_answer_id"
   add_index "answer_sheets", ["exam_id"], name: "index_answer_sheets_on_exam_id"
-  add_index "answer_sheets", ["user_id"], name: "index_answer_sheets_on_user_id"
+  add_index "answer_sheets", ["question_id"], name: "index_answer_sheets_on_question_id"
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
@@ -40,37 +42,25 @@ ActiveRecord::Schema.define(version: 20150811011439) do
   end
 
   create_table "exams", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.string   "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "questions", force: :cascade do |t|
     t.string   "content"
-    t.integer  "exam_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "questions", ["exam_id"], name: "index_questions_on_exam_id"
-
-  create_table "results", force: :cascade do |t|
-    t.integer  "score"
-    t.integer  "answer_sheet_id"
-    t.integer  "question_id"
-    t.integer  "answer_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  add_index "results", ["answer_id"], name: "index_results_on_answer_id"
-  add_index "results", ["answer_sheet_id"], name: "index_results_on_answer_sheet_id"
-  add_index "results", ["question_id"], name: "index_results_on_question_id"
+  add_index "questions", ["category_id"], name: "index_questions_on_category_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.boolean  "admin"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
