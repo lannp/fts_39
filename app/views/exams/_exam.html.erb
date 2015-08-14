@@ -9,4 +9,9 @@
   <div class="col-sm-6">
     <%= exam.category.name %>
   </div>
+  <% if exam.status == Settings.exams.start %>
+    <%= link_to t("exams.start"), exam_path(exam) %>
+  <% else %>
+    <%= link_to t("exams.view"), exam_path(exam) %>
+  <%end %>
 </div>
