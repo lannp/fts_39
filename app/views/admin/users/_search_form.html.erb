@@ -1,0 +1,18 @@
+<%= search_form_for [:admin, @search] do |f| %>
+  <%= f.condition_fields do |c| %>
+    <%= render "condition_fields", f: c %>
+  <% end %>
+  <p><%= link_to_add_fields t("admin.user.add_condition"), f, :condition %></p>
+  <br>
+  <%= t "admin.user.sort" %>
+  <div class="field row">
+    <div class="col-md-5">
+      <%= f.sort_fields do |s| %>
+        <%= s.sort_select %>
+      <% end %>
+    </div>
+    <div class="actions col-md-3">
+      <%= f.submit t("admin.search_button"), class: "btn btn-success btn-sm" %>
+    </div>
+  </div>
+<% end %>

@@ -8,6 +8,6 @@
         class: "btn btn-primary btn-sm" %>
     <% end %>
   </td>
-  <td><%= link_to t"delete", admin_user_path(user), remote: true, method: :delete,
+  <td><%= link_to t("delete"), admin_user_path(user), remote: true, method: :delete,
     data: {confirm: t("confirm_action")} %></td>
 </tr>
