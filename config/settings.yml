@@ -11,3 +11,8 @@ avatar:
     - png
 per_page: 10
 maximum_category_name_length: 100
+questions_per_exam: 5
+exams:
+  start: "Start"
+  view: "View"
+  minutes: 3
