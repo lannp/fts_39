@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users
     resources :categories
     resources :exams
+    resources :questions
   end
 
   root "static_pages#home"

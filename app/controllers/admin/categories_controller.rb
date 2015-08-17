@@ -25,7 +25,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def show
-    questions = @category.questions 
+    @questions = @category.questions
   end
 
   def edit   

@@ -1,0 +1,10 @@
+<tr id="question-<%= question.id %>">
+  <td><%= link_to question.content, admin_question_path(question) %></td>
+  <td>
+    <%= link_to "" , admin_question_path(question), method: :delete,
+      data: {confirm: t("confirm_action", action: t("delete"))},
+      class: "glyphicon glyphicon-remove" %>
+    <%= link_to "", edit_admin_question_path(question),
+      class: "glyphicon glyphicon-edit" %>
+  </td>
+</tr>

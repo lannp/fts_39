@@ -1,5 +1,5 @@
 <tr id="category-<%= category.id %>">
-  <td><%= link_to category.name, "#" %></td>
+  <td><%= link_to category.name, admin_category_path(category) %></td>
   <td><%= category.questions.length %></td>
   <td>
     <%= link_to "", admin_category_path(category), method: :delete, remote: true,
