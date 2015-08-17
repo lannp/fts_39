@@ -4,7 +4,10 @@ class Admin::UsersController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @users = User.paginate page: params[:page], per_page: Settings.per_page
+    @search = User.search params[:q]
+    @users = @search.result.paginate page: params[:page], per_page: Settings.per_page
+    @search.build_condition if @search.conditions.empty?
+    @search.build_sort if @search.sorts.empty?
   end
 
   def update

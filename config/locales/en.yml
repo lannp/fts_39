@@ -60,5 +60,7 @@ en:
     update_user_failed: "Update user failed"
     destroy_user_failed: "Delete user failed"
     destroy_user_successfull: "Delete user successfull"
+    remove_fields: "Remove"
+    search_button: "Search"
   delete: "Delete"
   confirm_action: "Are you sure"
