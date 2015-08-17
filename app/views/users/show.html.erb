@@ -1,10 +1,9 @@
 <% provide :title, @user.name %>
+<h1><%= t"edit_user.user" %></h1>
 <div class="row">
-  <aside class="col-md-3">
-    <h3>
-      <%= gravatar_for @user %>
+  <div class = "col-md-3"><%= gravatar_for @user %></div>
+    <div class="col-md-3"><h3>
       <%= @user.name %><br>
       <%= @user.email %>
-    </h3>
-  </aside>
+    </h3></div>
 </div>

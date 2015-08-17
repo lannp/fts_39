@@ -31,6 +31,7 @@ en:
     remember: "Remember me"
     new_user: "New user? "
   edit_user:
+    user: "User"
     profile_update: "Profile updated"
     save: "Save Changes"
     change: "Change"

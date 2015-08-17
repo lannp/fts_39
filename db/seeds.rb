@@ -5,7 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create!(name: "long",
-             email: "long@gmail.com",
-             password: "12341234",
-             admin: true)
+
+4.times do |n|
+  name = "Category#{n+1}"
+  Category.create!(name: name)
+end
