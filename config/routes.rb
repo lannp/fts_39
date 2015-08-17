@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     sign_out: "logout"
   }
   resources :users, only: [:show, :edit, :update]
-  resources :exams, only: [:index, :create, :update]
+  resources :exams, only: [:index, :show, :create, :update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

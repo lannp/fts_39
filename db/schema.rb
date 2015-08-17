@@ -14,14 +14,16 @@
 ActiveRecord::Schema.define(version: 20150817070722) do
 
   create_table "answer_sheets", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "exam_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
+  add_index "answer_sheets", ["answer_id"], name: "index_answer_sheets_on_answer_id"
   add_index "answer_sheets", ["exam_id"], name: "index_answer_sheets_on_exam_id"
-  add_index "answer_sheets", ["user_id"], name: "index_answer_sheets_on_user_id"
+  add_index "answer_sheets", ["question_id"], name: "index_answer_sheets_on_question_id"
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
@@ -40,9 +42,9 @@ ActiveRecord::Schema.define(version: 20150817070722) do
   end
 
   create_table "exams", force: :cascade do |t|
-    t.string   "name"
     t.integer  "user_id"
     t.integer  "category_id"
+    t.string   "status"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -68,19 +70,6 @@ ActiveRecord::Schema.define(version: 20150817070722) do
   end
 
   add_index "questions", ["category_id"], name: "index_questions_on_category_id"
-
-  create_table "results", force: :cascade do |t|
-    t.integer  "score"
-    t.integer  "answer_sheet_id"
-    t.integer  "question_id"
-    t.integer  "answer_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  add_index "results", ["answer_id"], name: "index_results_on_answer_id"
-  add_index "results", ["answer_sheet_id"], name: "index_results_on_answer_sheet_id"
-  add_index "results", ["question_id"], name: "index_results_on_question_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
