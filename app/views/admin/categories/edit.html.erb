@@ -1,0 +1,15 @@
+<div class="row">
+  <hr>
+  <div class="col-md-4 col-md-offset-4">
+    <h1 class="text-info text-center"><%= t "admin.category.update" %></h1>
+    <br>
+    <%= form_for [:admin, @category], class: "form form-inline" do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <div class="form-group">
+        <%= f.label t "name" %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <%= f.submit t("done"), class: "btn btn-primary pull-right" %>
+    <% end %>
+  </div>
+</div>
