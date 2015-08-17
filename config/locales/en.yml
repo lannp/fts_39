@@ -30,6 +30,7 @@ en:
   login:
     remember: "Remember me"
     new_user: "New user? "
+    please_login: "Please login"
   edit_user:
     profile_update: "Profile updated"
     save: "Save Changes"
