@@ -32,6 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.string :name
       t.string :avatar
+      t.boolean :admin
 
       t.timestamps null: false
     end

@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20150817070722) do
     t.string   "last_sign_in_ip"
     t.string   "name"
     t.string   "avatar"
+    t.boolean  "admin"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "slug"

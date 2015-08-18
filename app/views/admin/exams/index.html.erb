@@ -1,0 +1,17 @@
+<h1><%= t"admin.exams.all_exam" %></h1>
+<div id="section_admin_user">
+  <table id="users_record" class="table table-bordered">
+    <tbody>
+      <tr>
+        <th><%= t "admin.exams.user_id" %></th>
+        <th><%= t "admin.exams.user_email" %></th>
+        <th><%= t "admin.exams.id" %></th>
+        <th><%= t "admin.exams.category" %></th>  
+        <th><%= t "delete" %></th>
+      </tr>
+      <tr>
+        <%= render @exams %>
+      </tr>
+    </tbody>
+  </table>
+</div>
