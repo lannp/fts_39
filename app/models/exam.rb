@@ -3,6 +3,7 @@ class Exam < ActiveRecord::Base
   before_create {self.status = Settings.exams.start}
   before_create :create_answer_sheets
   before_update {self.status = Settings.exams.view}
+  after_update :send_result_exam
 
   has_many :answer_sheets
   belongs_to :user
@@ -18,6 +19,10 @@ class Exam < ActiveRecord::Base
   def answer_correct
     self.answer_sheets.select{|answer_sheet| !answer_sheet.answer.nil? && 
       answer_sheet.answer.status}.length
+  end
+
+  def send_result_exam 
+    SendResultExam.perform_async self.id if self.checked
   end
 
   private

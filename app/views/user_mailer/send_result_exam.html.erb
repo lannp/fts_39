@@ -1,0 +1,4 @@
+<h1><%= @exam.category.name%></h1>
+<%= t "exams.anser_correct" %>
+<%= @exam.answer_correct %>
+<%= link_to t("exams.view"), exam_path(@exam) %>

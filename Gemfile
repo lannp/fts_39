@@ -23,6 +23,9 @@ gem "rails_config", "0.4.2"
 gem "friendly_id"
 gem "cancancan"
 gem "config"
+gem "whenever", require: false
+gem "sidekiq"
+gem "letter_opener"
 
 group :development, :test do
   gem "sqlite3",     "1.3.9"
