@@ -1,0 +1,10 @@
+<tr id="exam-<%= exam.id %>">
+  <td><%= link_to exam.user.id, exam.user %></td>
+  <td><%= exam.user.email %></td>
+  <td><%= exam.id %></td>
+  <td>
+    <%= link_to exam.category.name, exam %>
+  </td>
+  <td><%= link_to t("delete"), admin_exam_path(exam), remote: true, method: :delete,
+    data: {confirm: t("confirm_action")} %></td>
+</tr>

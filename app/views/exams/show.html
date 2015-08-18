@@ -1,4 +1,7 @@
 <h3 align="center"><%= @exam.category.name %></h3>
+<% if current_user.admin %>
+  <h2><%= @exam.answer_correct %>/<%= @answer_sheets.count %></h2>
+<% end %>
 <h3 class="pull-right text-danger">
   <span id="hidden-data" data-time-over-msg="<%= t 'exams.time_over' %>"
     data-time-remaining="<%= @time_remaining %>">

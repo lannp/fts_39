@@ -6,6 +6,8 @@ class ExamsController < ApplicationController
   def show
     @time_remaining = @exam.time_remaining
     @is_time_over = @time_remaining < 0
+    @answer_sheets = Exam.find(params[:id]).answer_sheets
+    @answer_correct = @exam.answer_correct
   end
   
   def index

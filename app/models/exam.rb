@@ -15,6 +15,11 @@ class Exam < ActiveRecord::Base
     Settings.exams.minutes*60 - (Time.zone.now - self.created_at).to_i
   end
 
+  def answer_correct
+    self.answer_sheets.select{|answer_sheet| !answer_sheet.answer.nil? && 
+      answer_sheet.answer.status}.length
+  end
+
   private
   def create_answer_sheets
     Category.find(self.category_id).questions.
