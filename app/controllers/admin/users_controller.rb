@@ -1,6 +1,4 @@
 class Admin::UsersController < ApplicationController
-  
-  before_action :set_user, only: [:edit, :update, :destroy]
   load_and_authorize_resource
   
   def index
@@ -37,9 +35,5 @@ class Admin::UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit :admin
-  end
-
-  def set_user
-    @user = User.find params[:id]
   end
 end

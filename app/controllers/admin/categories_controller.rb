@@ -1,5 +1,4 @@
 class Admin::CategoriesController < ApplicationController
-  before_action :init_category, except: [:new, :index, :create]
   load_and_authorize_resource
 
   def index
@@ -57,10 +56,6 @@ class Admin::CategoriesController < ApplicationController
   end
 
   private
-  def init_category
-    @category = Category.find params[:id]
-  end
-
   def category_params
     params.require(:category).permit :name
   end
