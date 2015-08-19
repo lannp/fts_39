@@ -5,6 +5,16 @@
   <td>
     <%= link_to exam.category.name, exam %>
   </td>
+  <td>
+    <% if exam.checked? %>
+      <%= t "admin.exams.checked" %>
+    <% else %>
+      <%= form_for [:admin, exam], remote: true do |f| %>
+        <%= f.hidden_field :checked, value: !exam.checked %>
+        <%= f.submit t("admin.exams.check"), class: "btn btn-primary btn-sm" %>
+      <% end %>
+    <% end %>
+  </td>
   <td><%= link_to t("delete"), admin_exam_path(exam), remote: true, method: :delete,
     data: {confirm: t("confirm_action")} %></td>
 </tr>

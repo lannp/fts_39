@@ -4,6 +4,7 @@ class CreateExams < ActiveRecord::Migration
       t.integer :user_id
       t.integer :category_id
       t.string :status
+      t.boolean :checked
 
       t.timestamps null: false
     end
