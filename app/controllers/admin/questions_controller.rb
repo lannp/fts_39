@@ -1,14 +1,13 @@
 class Admin::QuestionsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource 
+  load_and_authorize_resource :category
 
   def new
-    @category_id = params[:category_id]
     4.times {@question.answers.build}
   end
 
   def create
     @question = Question.new question_params
-    @category = @question.category
     if @question.save
       flash[:sucess] = t "admin.question.create_success"
     else
@@ -27,7 +26,6 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def update
-    @category = @question.category
     if @question.update_attributes question_params
       flash[:sucess] = t "admin.question.update_success"
       redirect_to admin_category_path @category
@@ -38,7 +36,6 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def destroy
-    @category = @question.category
     if @question.destroy
       flash[:info] = t "admin.question.destroy_success"
     else

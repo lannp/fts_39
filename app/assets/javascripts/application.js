@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require bootstrap
 //= require select_only_one_checkbox
+//= require answer_sheet_timer
