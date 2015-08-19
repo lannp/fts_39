@@ -1,5 +1,5 @@
 <div class="col-md-4">
-  <%= form_for [:admin, @question], class: "form" do |f| %>
+  <%= form_for [:admin, @category, @question], class: "form" do |f| %>
     <%= render "shared/error_messages", object: f.object %>
     <div class="form-group">
       <%= f.label t "admin.question.question" %>

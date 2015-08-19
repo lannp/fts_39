@@ -9,17 +9,14 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      respond_to do |format|
-        format.html do
-          flash[:success] = t "admin.category.create_success"
-          redirect_to admin_categories_path
-        end
-        format.js
-      end
+      flash[:success] = t "admin.category.create_success"   
     else
       flash[:success] = t "admin.category.create_failed"
       @categories = Category.ordered_by_name.paginate page: params[:page], per_page: Settings.per_page
-      render :index
+    end
+    respond_to do |format|
+      format.html {redirect_to admin_categories_path}
+      format.js
     end
   end
 
@@ -42,16 +39,14 @@ class Admin::CategoriesController < ApplicationController
     
   def destroy
     if @category.destroy
-      respond_to do |format|
-        format.html do
-          flash[:success] = t "admin.category.destroy.success"
-          redirect_to admin_categories_path
-        end
-        format.js
-      end
+      flash[:success] = t "admin.category.destroy.success"     
     else
       flash[:danger] = t "admin.category.destroy.failed"
       redirect_to admin_categories_path
+    end
+    respond_to do |format|
+      format.html {redirect_to admin_categories_path}
+      format.js
     end
   end
 

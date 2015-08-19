@@ -2,14 +2,14 @@
 <h1><%= t "admin.question.create_title" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for [:admin, @question], class: "form" do |f| %>
+    <%= form_for [:admin, @category, @question], class: "form" do |f| %>
       <%= render "shared/error_messages", object: f.object %>
       <div class="form-group">
         <%= f.label t "admin.question.question" %>
         <%= f.text_field :content, class: "form-control",
           placeholder: t("admin.question.enter_new_question") %>
       </div>
-      <%= f.hidden_field :category_id, value: @category_id %>
+      <%= f.hidden_field :category_id, value: @category.id %>
       <div class="form-group" >
         <div id="answer_list">
           <%= f.fields_for :answers, wrapper: true do |answer_form| %>

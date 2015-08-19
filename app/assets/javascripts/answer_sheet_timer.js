@@ -1,6 +1,8 @@
-total_times = $("#hidden-data").data("time-remaining");
-time_over_msg = $("#hidden-data").data("time-over-msg");
-$(document).ready(time_remaining(total_times));
+$(document).ready(function(){
+  var total_times = $("#hidden-data").data("time-remaining");
+  var time_over_msg = $("#hidden-data").data("time-over-msg");
+  time_remaining(total_times);
+});
 
 function time_remaining(total_seconds){
   if(total_seconds <= 0){

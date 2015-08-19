@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :init_user, only: [:show, :edit, :update]
-
-  def edit  
-  end
+  load_and_authorize_resource
 
   def show
+  end
+
+  def edit  
   end
 
   def update
@@ -20,10 +20,6 @@ class UsersController < ApplicationController
   end
 
   private
-  def init_user
-    @user = User.find params[:id]
-  end 
-
   def user_params
     params.require(:user).permit :name, :email, :password, :password_confirmation, :avatar
   end
