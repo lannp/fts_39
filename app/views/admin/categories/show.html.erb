@@ -1,0 +1,19 @@
+<br>
+<div class="row">
+  <div class="col-md-8">
+    <hr>
+    <table id="question_list_table" class="table table-hover table-bordered text-center">
+      <tbody>
+        <tr>
+          <th class="text-center"><%= t "question" %></th>
+          <th class="text-center"><%= t "tool" %></th>
+        </tr>
+        <% @questions.each do |question| %>
+          <%= render "admin/questions/question", question: question %>
+        <% end %>
+      </tbody>  
+    </table>
+    <%= link_to t("admin.question.create_new_question"),
+      new_admin_question_path(category_id: @category.id), class: "btn btn-primary" %>
+  </div>
+</div>
