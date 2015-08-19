@@ -4,8 +4,11 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to t("header.home"), exams_path %></li>
-          <li><%= link_to t("header.help"), help_path %></li>       
+          <% if current_user.admin? %>
+            <li><%= link_to t("admin.manage_user"), admin_users_path %></li>
+            <li><%= link_to t("admin.manage_category"), admin_categories_path %></li>
+            <li><%= link_to t("admin.manage_exam"), admin_exams_path %></li>
+          <% end %>      
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <%= t "header.account" %> <b class="caret"></b>
@@ -20,8 +23,6 @@
             </ul>
           </li>
         <% else %>
-          <li><%= link_to t("header.home"), root_path %></li>
-          <li><%= link_to t("header.help"), help_path %></li>
           <li><%= link_to t("header.login"), new_user_session_path %></li>
         <% end %>
       </ul>

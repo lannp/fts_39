@@ -66,6 +66,9 @@ en:
     destroy_user_successfull: "Delete user successfull"
     remove_fields: "Remove"
     search_button: "Search"
+    manage_user: "Manage User"
+    manage_exam: "Manage Exam"
+    manage_category: "Manage Category"
     category:
       category: "Category"
       nums_of_question: "Numbers of question"

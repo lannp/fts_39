@@ -1,6 +1,5 @@
 class Admin::ExamsController < ApplicationController
   load_and_authorize_resource
-  before_action :init_exam, only: [:update, :destroy]
 
   def index
     @exams = Exam.all
@@ -34,10 +33,6 @@ class Admin::ExamsController < ApplicationController
   end
 
   private
-  def init_exam
-    @exam = Exam.find params[:id]
-  end
-
   def exam_param
     params.require(:exam).permit :checked
   end
