@@ -32,8 +32,9 @@ group :development, :test do
   gem "byebug",      "3.4.0"
   gem "web-console", "2.0.0.beta3"
   gem "spring"
-  gem "rspec-rails"
   gem "factory_girl_rails"
+  gem "rspec-rails"
+  gem "shoulda-matchers"
   gem "capybara"
 end
 
