@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :history
   has_many :answer_sheets
-  has_many :exams
+  has_many :exams, dependent: :destroy
 
   def to_param
     "#{id} #{name}".parameterize
