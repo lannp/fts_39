@@ -11,7 +11,7 @@ class Admin::CategoriesController < ApplicationController
     if @category.save
       flash[:success] = t "admin.category.create_success"   
     else
-      flash[:success] = t "admin.category.create_failed"
+      flash[:danger] = t "admin.category.create_failed"
       @categories = Category.ordered_by_name.paginate page: params[:page], per_page: Settings.per_page
     end
     respond_to do |format|
