@@ -7,7 +7,7 @@ describe Category do
       it {is_expected.to be_valid}
     end
     context "invalid category" do
-      let(:category){Category.create FactoryGirl.attributes_for :invalid_category1}
+      let(:category){Category.create FactoryGirl.attributes_for :invalid_category}
       it {is_expected.not_to be_valid}
     end
   end

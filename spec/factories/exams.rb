@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :exam do
-    user
-    category
+    category FactoryGirl.create :category
   end
 end
